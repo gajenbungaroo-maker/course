@@ -14,7 +14,7 @@ profile: 'airbnb'
 model-paths: ["models"]
 analysis-paths: ["analyses"]
 test-paths: ["tests"]
-seed-paths: ["seeds"]dbt
+seed-paths: ["seeds"]
 macro-paths: ["macros"]
 snapshot-paths: ["snapshots"]
 
@@ -32,4 +32,5 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   airbnb:
     # Config indicated by + and applies to all files under models/example/
-
+    example:
+      +materialized: view
