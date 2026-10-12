@@ -1,9 +1,8 @@
 {{
   config(
-    materialized='incremental',
-    incremental_strategy='merge',
-    unique_key='review_id'
-  )
+    materialized = 'table',
+    on_schema_change='fail'
+    )
 }}
 WITH src_reviews AS (
   SELECT * FROM {{ ref('src_reviews') }}
