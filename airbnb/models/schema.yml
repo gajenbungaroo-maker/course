@@ -56,7 +56,8 @@ models:
     description: A table which contains Airbnb listings and their corresponding hosts.
     data_tests:
       - dbt_expectations.expect_table_row_count_to_equal_other_table:
-          compare_model: source('airbnb', 'listings')
+          arguments:
+            compare_model: source('airbnb', 'listings')
 
   - name: fct_reviews
     description: Fact table which contains Airbnb reviews.
@@ -80,3 +81,5 @@ models:
           - accepted_values:
               arguments:
                 values: ['positive', 'neutral', 'negative']
+
+      
