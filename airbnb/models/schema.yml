@@ -32,6 +32,17 @@ models:
           - positive_values
 
   - name: dim_hosts_cleansed
+    versions:
+      - v : 1
+        defined_in: dim_hosts_cleansed.sql
+      
+      - v : 2
+        defined_in: dim_hosts_cleansed_v2.sql
+
+    latest_version: 1
+        
+
+      
     description: Cleansed table which contains Airbnb hosts.
     columns:
       - name: host_id
